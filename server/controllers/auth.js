@@ -88,7 +88,7 @@ export const getMe = async (req, res) => {
   try {
   } catch (error) {
     res.json({
-      message: "Ошибка авторизации",
+      message: "Ошибка при получении данных!",
     });
   }
 };

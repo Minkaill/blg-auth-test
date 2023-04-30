@@ -86,7 +86,26 @@ export const login = async (req, res) => {
 // Get me user
 export const getMe = async (req, res) => {
   try {
-    
+    const user = await User.findById(req.userId);
+
+    if (!user) {
+      return res.json({
+        message: "Пользователь не найден",
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        id: user._id,
+      },
+      process.env.JWT_SECRET_KEY,
+      { expiresIn: "30d" }
+    );
+
+    res.json({
+      user,
+      token,
+    });
   } catch (error) {
     res.json({
       message: "Ошибка при получении данных!",

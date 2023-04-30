@@ -10,6 +10,6 @@ router.post("/register", register);
 router.post("/login", login);
 
 // Get Me
-router.post("/register", getMe);
+router.get("/me", getMe);
 
 export default router;

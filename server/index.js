@@ -10,6 +10,10 @@ dotenv.config();
 const PORT = process.env.PORT || 4001;
 const DB_SERVER = process.env.DB_SERVER;
 
+app.get("/", (req, res) => {
+  return res.json({ message: "hello world!" });
+});
+
 // Middleware
 app.use(cors());
 app.use(express.json());

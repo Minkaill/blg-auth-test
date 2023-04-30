@@ -86,6 +86,7 @@ export const login = async (req, res) => {
 // Get me user
 export const getMe = async (req, res) => {
   try {
+    
   } catch (error) {
     res.json({
       message: "Ошибка при получении данных!",

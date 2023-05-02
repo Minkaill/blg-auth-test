@@ -13,9 +13,10 @@ li {
   list-style: none;
 }
 
-html,
-body {
-  font-family: "Poppins", sans-serif;
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+  }
 }
 
 a {
